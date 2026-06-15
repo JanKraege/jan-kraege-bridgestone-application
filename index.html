@@ -346,32 +346,53 @@
     }
 
     .highlight {
-      background: var(--bridgestone-red);
+      background:
+        linear-gradient(rgba(7,17,31,0.94), rgba(7,17,31,0.96)),
+        linear-gradient(135deg, #07111f 0%, #0b1f33 55%, #1b0f16 100%);
       color: var(--white);
-      padding: 80px 10%;
+      padding: 90px 10%;
       text-align: center;
       scroll-margin-top: 90px;
       max-width: none;
+      border-top: 6px solid var(--bridgestone-red);
     }
 
     .highlight h3 {
       color: var(--white);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      font-size: 44px;
     }
 
     .highlight p {
-      max-width: 850px;
-      margin: 12px auto;
+      max-width: 880px;
+      margin: 14px auto;
       font-size: 19px;
-      line-height: 1.8;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .highlight .red-line {
+      margin-bottom: 30px;
     }
 
     footer {
       text-align: center;
-      padding: 45px 10%;
-      background: var(--bridgestone-black);
+      padding: 50px 10%;
+      background: #030d1a;
       color: var(--white);
       scroll-margin-top: 90px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    footer p {
+      margin: 14px 0;
+      font-size: 17px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    footer strong {
+      font-size: 18px;
+      color: var(--white);
     }
 
     a {
@@ -381,7 +402,12 @@
     }
 
     footer a {
-      color: #fecaca;
+      color: #fbc0c4;
+      font-weight: 700;
+    }
+
+    footer a:hover {
+      color: var(--white);
     }
 
 
@@ -738,6 +764,7 @@
 
   <section class="highlight">
     <h3>My Motivation</h3>
+    <div class="red-line"></div>
     <p>
       I moved across continents to challenge myself, studied and worked in international environments and developed a strong passion for marketing, customer insights and brand-driven business growth.
     </p>
