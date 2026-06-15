@@ -384,6 +384,44 @@
       color: #fecaca;
     }
 
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(300px, 550px));
+      justify-content: center;
+      gap: 26px;
+    }
+
+    .program-box {
+      padding: 42px;
+      min-height: 300px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 18px;
+      background: var(--white);
+      border-top: 5px solid var(--bridgestone-red);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
+    }
+
+    .program-box:nth-child(2),
+    .program-box:nth-child(3) {
+      background: #f9fafb;
+    }
+
+    .program-box h4 {
+      font-size: 27px;
+      margin: 12px 0 14px;
+      color: var(--bridgestone-black);
+    }
+
+    .program-box p {
+      font-size: 17px;
+      margin: 8px 0;
+      color: #374151;
+    }
+
     @media (max-width: 1000px) {
       nav {
         flex-direction: column;
@@ -432,6 +470,16 @@
 
       .timeline {
         padding-left: 22px;
+      }
+
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-box {
+        min-height: auto;
+        padding: 34px 24px;
       }
     }
   </style>
@@ -616,8 +664,8 @@
     <h3>Why This Program Stands Out To Me</h3>
     <div class="red-line"></div>
 
-    <div class="cards">
-      <div class="card">
+    <div class="program-grid">
+      <div class="program-box">
         <div class="emoji">🚀</div>
         <h4>Real Marketing Responsibility</h4>
         <p>
@@ -625,7 +673,7 @@
         </p>
       </div>
 
-      <div class="card">
+      <div class="program-box">
         <div class="emoji">📊</div>
         <h4>Customer Insights & Business Intelligence</h4>
         <p>
@@ -633,7 +681,7 @@
         </p>
       </div>
 
-      <div class="card">
+      <div class="program-box">
         <div class="emoji">🌍</div>
         <h4>European Exposure</h4>
         <p>
@@ -641,7 +689,7 @@
         </p>
       </div>
 
-      <div class="card">
+      <div class="program-box">
         <div class="emoji">🤝</div>
         <h4>Mentoring & Development</h4>
         <p>
