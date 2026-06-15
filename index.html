@@ -3,18 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jan Kraege | Bridgestone Application</title>
+  <title>Jan Kraege | Bridgestone European Graduate Program – Marketing</title>
 
   <style>
     html {
       scroll-behavior: smooth;
     }
 
+    :root {
+      --bridgestone-red: #e30613;
+      --bridgestone-black: #07111f;
+      --bridgestone-blue: #0b1f33;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --light: #f5f7fa;
+      --white: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff7f7;
-      color: #1f2937;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
       line-height: 1.6;
     }
 
@@ -23,95 +38,186 @@
       top: 0;
       z-index: 1000;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 18px 8%;
-      background: #e60012;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      gap: 30px;
+      padding: 20px 10%;
+      background: var(--white);
+      box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--bridgestone-black);
+      font-size: 22px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--bridgestone-red);
+    }
+
+    .logo-small {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      margin-top: 4px;
     }
 
     nav ul {
       display: flex;
-      gap: 30px;
+      gap: 24px;
       list-style: none;
       margin: 0;
       padding: 0;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
       text-decoration: none;
-      color: white;
+      color: var(--bridgestone-black);
       font-weight: 700;
       font-size: 14px;
     }
 
     nav a:hover {
-      opacity: 0.8;
+      color: var(--bridgestone-red);
     }
 
     .nav-button {
-      background: white;
-      color: #e60012 !important;
+      background: var(--bridgestone-red);
+      color: var(--white) !important;
       padding: 10px 18px;
       border-radius: 999px;
     }
 
     header {
-      padding: 95px 10% 75px;
+      position: relative;
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      background: linear-gradient(135deg, #e60012 0%, #ff4d5f 100%);
-      color: white;
+      color: var(--white);
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(7,17,31,0.74), rgba(7,17,31,0.60)),
+        radial-gradient(circle at 18% 22%, rgba(255,255,255,0.24) 0 2px, transparent 3px),
+        radial-gradient(circle at 34% 44%, rgba(255,255,255,0.20) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 30%, rgba(255,255,255,0.20) 0 2px, transparent 3px),
+        radial-gradient(circle at 86% 68%, rgba(255,255,255,0.18) 0 2px, transparent 3px),
+        linear-gradient(135deg, #07111f 0%, #0b1f33 45%, #62121b 100%);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(25deg, transparent 0 19%, rgba(255,255,255,0.15) 19.2%, transparent 19.5%),
+        linear-gradient(155deg, transparent 0 34%, rgba(255,255,255,0.13) 34.2%, transparent 34.5%),
+        linear-gradient(90deg, transparent 0 48%, rgba(255,255,255,0.10) 48.2%, transparent 48.5%),
+        linear-gradient(120deg, transparent 0 62%, rgba(255,255,255,0.12) 62.2%, transparent 62.5%),
+        linear-gradient(65deg, transparent 0 78%, rgba(255,255,255,0.10) 78.2%, transparent 78.5%);
+      opacity: 0.95;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -90px;
+      left: -10%;
+      width: 120%;
+      height: 230px;
+      background:
+        linear-gradient(90deg, transparent 0 8%, rgba(255,255,255,0.10) 8.3% 9%, transparent 9.3% 18%, rgba(255,255,255,0.12) 18.3% 19%, transparent 19.3%),
+        linear-gradient(180deg, rgba(255,255,255,0.16), transparent);
+      transform: skewY(-4deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1050px;
+      padding: 80px 10%;
     }
 
     .application-tag {
-      color: rgba(255,255,255,0.9);
+      display: inline-block;
+      color: var(--white);
+      background: rgba(227,6,19,0.96);
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 15px;
-      font-size: 14px;
+      margin-bottom: 22px;
+      font-size: 13px;
+      padding: 9px 16px;
+      border-radius: 999px;
     }
 
     header h1 {
-      font-size: 56px;
+      font-size: 58px;
+      line-height: 1.08;
       margin: 0;
-      color: white;
+      color: var(--white);
     }
 
     header h2 {
-      font-size: 28px;
+      font-size: 27px;
       font-weight: 500;
-      margin: 18px auto 0;
-      max-width: 900px;
-      color: white;
+      margin: 22px auto 0;
+      max-width: 920px;
+      color: rgba(255,255,255,0.95);
     }
 
     .tagline {
       font-size: 18px;
-      color: rgba(255,255,255,0.92);
+      color: rgba(255,255,255,0.90);
       max-width: 850px;
-      margin: 24px auto 0;
+      margin: 26px auto 0;
     }
 
     section {
-      padding: 60px 8%;
+      padding: 70px 8%;
       max-width: 1300px;
       margin: 0 auto;
-      scroll-margin-top: 90px;
+      scroll-margin-top: 100px;
     }
 
     h3 {
-      font-size: 42px;
+      font-size: 40px;
       text-align: center;
-      color: #e60012;
-      margin-bottom: 30px;
+      color: var(--bridgestone-black);
+      margin-bottom: 18px;
       margin-top: 0;
+      letter-spacing: 1px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 38px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .red-line {
+      width: 78px;
+      height: 4px;
+      background: var(--bridgestone-red);
+      margin: 0 auto 34px;
+      border-radius: 999px;
     }
 
     .intro-box,
     .intro {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto;
       text-align: center;
     }
@@ -120,8 +226,8 @@
     .intro p {
       font-size: 18px;
       color: #374151;
-      line-height: 1.8;
-      margin-bottom: 12px;
+      line-height: 1.85;
+      margin-bottom: 14px;
     }
 
     .profile-grid {
@@ -138,33 +244,31 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-    }
-
-    .profile-box:nth-child(1),
-    .profile-box:nth-child(4) {
-      background: #ffffff;
+      border-radius: 18px;
+      background: var(--white);
+      border-top: 5px solid var(--bridgestone-red);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.07);
     }
 
     .profile-box:nth-child(2),
     .profile-box:nth-child(3) {
-      background: #ffe5e8;
+      background: #f9fafb;
     }
 
     .profile-box h4 {
-      font-size: 28px;
+      font-size: 27px;
       margin: 12px 0 14px;
-      color: #111827;
+      color: var(--bridgestone-black);
     }
 
     .profile-box p {
       font-size: 17px;
       margin: 8px 0;
+      color: #374151;
     }
 
     .emoji {
-      font-size: 34px;
+      font-size: 36px;
     }
 
     .cards {
@@ -175,66 +279,103 @@
     }
 
     .card {
-      background: white;
-      padding: 30px;
+      background: var(--white);
+      padding: 32px;
       border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 9px 26px rgba(0,0,0,0.07);
       text-align: center;
+      border: 1px solid var(--border);
     }
 
     .card .emoji {
-      font-size: 34px;
+      font-size: 36px;
       margin-bottom: 12px;
     }
 
     .card h4 {
       margin-top: 0;
-      color: #e60012;
+      color: var(--bridgestone-red);
       font-size: 21px;
     }
 
+    .card p {
+      color: #374151;
+      font-size: 16.5px;
+    }
+
     .timeline {
-      border-left: 4px solid #e60012;
+      border-left: 4px solid var(--bridgestone-red);
       padding-left: 35px;
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     .timeline div {
       margin-bottom: 24px;
       font-size: 17px;
+      background: var(--white);
+      padding: 22px 24px;
+      border-radius: 14px;
+      box-shadow: 0 7px 20px rgba(0,0,0,0.05);
+    }
+
+    .timeline strong {
+      color: var(--bridgestone-black);
+    }
+
+    .mobility-band {
+      background:
+        linear-gradient(rgba(7,17,31,0.86), rgba(7,17,31,0.88)),
+        linear-gradient(120deg, #07111f 0%, #0b1f33 45%, #2b1117 100%);
+      color: var(--white);
+      padding: 78px 10%;
+      text-align: center;
+      max-width: none;
+    }
+
+    .mobility-band h3 {
+      color: var(--white);
+    }
+
+    .mobility-band p {
+      max-width: 900px;
+      margin: 12px auto;
+      font-size: 19px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.92);
     }
 
     .highlight {
-      background: #e60012;
-      color: white;
-      padding: 75px 10%;
+      background: var(--bridgestone-red);
+      color: var(--white);
+      padding: 80px 10%;
       text-align: center;
       scroll-margin-top: 90px;
+      max-width: none;
     }
 
     .highlight h3 {
-      color: white;
+      color: var(--white);
       margin-bottom: 20px;
     }
 
     .highlight p {
       max-width: 850px;
-      margin: auto;
+      margin: 12px auto;
       font-size: 19px;
       line-height: 1.8;
     }
 
     footer {
       text-align: center;
-      padding: 42px 10%;
-      background: #111827;
-      color: white;
+      padding: 45px 10%;
+      background: var(--bridgestone-black);
+      color: var(--white);
       scroll-margin-top: 90px;
     }
 
     a {
-      color: #e60012;
+      color: var(--bridgestone-red);
       text-decoration: none;
       font-weight: bold;
     }
@@ -243,33 +384,41 @@
       color: #fecaca;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
+      nav {
+        flex-direction: column;
+        gap: 18px;
+      }
+
       nav ul {
-        flex-wrap: wrap;
         justify-content: center;
         gap: 14px;
       }
     }
 
     @media (max-width: 800px) {
+      nav {
+        padding: 18px 6%;
+      }
+
       header {
-        padding: 70px 8% 55px;
+        min-height: 520px;
       }
 
       header h1 {
-        font-size: 42px;
+        font-size: 40px;
       }
 
       header h2 {
-        font-size: 22px;
+        font-size: 21px;
       }
 
       h3 {
-        font-size: 32px;
+        font-size: 31px;
       }
 
       section {
-        padding: 50px 6%;
+        padding: 55px 6%;
       }
 
       .profile-grid {
@@ -278,11 +427,11 @@
 
       .profile-box {
         min-height: auto;
-        padding: 35px 25px;
+        padding: 34px 24px;
       }
 
       .timeline {
-        padding-left: 24px;
+        padding-left: 22px;
       }
     }
   </style>
@@ -291,84 +440,97 @@
 <body>
 
   <nav>
+    <div class="logo">
+      <span>B</span>RIDGESTONE
+      <span class="logo-small">Solutions for your journey</span>
+    </div>
+
     <ul>
       <li><a href="#intro">About Me</a></li>
-      <li><a href="#profile">My Profile</a></li>
+      <li><a href="#profile">Profile</a></li>
       <li><a href="#journey">Journey</a></li>
-      <li><a href="#bridgestone">Why Colgate</a></li>
+      <li><a href="#bridgestone">Why Bridgestone</a></li>
       <li><a href="#program">Program</a></li>
-      <li><a href="#trends">Ideas</a></li>
-      <li><a class="nav-button" href="#contact">Let’s Connect</a></li>
+      <li><a href="#ideas">Ideas</a></li>
+      <li><a class="nav-button" href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <header>
-    <p class="application-tag">Bridgestone Application</p>
-    <h1>European Graduate Program – Marketing</h1>
-    <h2>A global journey from Germany to Australia — and now back to Germany for the next challenge.</h2>
-    <p class="tagline">
-      Business Management Graduate • International Experience • Marketing & Customer Insights & Data • Brand Strategy
-    </p>
+    <div class="hero-content">
+      <p class="application-tag">Bridgestone Application</p>
+      <h1>European Graduate Program – Marketing</h1>
+      <h2>Bringing international experience, marketing curiosity and analytical thinking to a global mobility company.</h2>
+      <p class="tagline">
+        Business Management Graduate • Marketing & Sales Experience • Customer Insights • Digital & International Mindset
+      </p>
+    </div>
   </header>
 
   <section id="intro">
     <div class="intro-box">
-<h3>Dear Bridgestone Team,</h3>
+      <h3>Dear Bridgestone Team,</h3>
+      <div class="red-line"></div>
 
       <p>
-        My name is Jan and I am currently completing my Master of Business Management at the University of Technology Sydney.
+        My name is Jan Kraege and I am currently completing my Master of Business Management at the University of Technology Sydney.
       </p>
 
       <p>
-        What started as an exchange semester in Australia turned into several years of studying, working and growing abroad. Along the way, I gained experience at BRITA Australia, completed my Master's degree and developed a strong interest in commercial strategy, marketing, brand strategy, customer insights and international business.
+        What started as an exchange semester in Australia developed into several years of studying, working and growing in an international environment. During this time, I gained practical experience in marketing, sales, customer insights, market analysis and campaign execution.
       </p>
 
       <p>
-        Now, after returning to Germany, I am looking for the next challenge to start my professional career. The Bridgestone European Graduate Program in Marketing immediately stood out to me because it combines exactly the areas that excite me most: brand management, customer insights, data-driven marketing and international collaboration.
+        The Bridgestone European Graduate Program in Marketing immediately stood out to me because it combines exactly what I am looking for in my first full-time professional role: brand management, data-driven marketing, customer understanding, European exposure and long-term development within a global company.
       </p>
     </div>
   </section>
 
   <section id="profile">
     <h3>My Profile in 60 Seconds</h3>
+    <div class="red-line"></div>
+    <p class="section-subtitle">
+      A marketing-oriented business graduate with international experience, analytical curiosity and a strong interest in brands, customers and mobility.
+    </p>
 
     <div class="profile-grid">
       <div class="profile-box">
-        <div class="emoji">💼</div>
-        <h4>Marketing Thinking</h4>
-        <p>Strong interest in brand strategy, customer insights and understanding how businesses grow through meaningful marketing.</p>
-        <p>During my Master’s in Sydney, I focused on global strategy, supply chains and the marketing and business decisions that drive long-term business success.</p>
-        <p>What excites me most is connecting strategic thinking with practical execution to create value for customers and brands.</p>
+        <div class="emoji">📈</div>
+        <h4>Marketing & Brand Management</h4>
+        <p>I am strongly interested in how brands are positioned, developed and translated into meaningful customer experiences.</p>
+        <p>Through my studies and practical experience, I developed a strong understanding of marketing strategy, consumer behaviour and business growth.</p>
+        <p>What excites me most is connecting customer insights with creative and commercial execution.</p>
       </div>
 
       <div class="profile-box">
         <div class="emoji">📊</div>
-        <h4>Analytical & Data-Driven</h4>
-        <p>Experience in market analysis, customer research and turning complex information into clear recommendations.</p>
-        <p>At BRITA Australia, I analysed customer behaviour and evaluated the potential of a subscription model through market and consumer research.</p>
-        <p>I enjoy using data and insights to support better business decisions.</p>
+        <h4>Customer Insights & Data</h4>
+        <p>I enjoy working with data, market research and customer insights to support better business decisions.</p>
+        <p>At BRITA Australia, I analysed customer behaviour, market potential and commercial feasibility for a subscription model.</p>
+        <p>This strengthened my ability to turn complex information into clear recommendations.</p>
       </div>
 
       <div class="profile-box">
-        <div class="emoji">🤝</div>
-        <h4>Brand & Customer Understanding</h4>
-        <p>Strong interest in understanding customer behaviour, brand positioning and customer needs.</p>
-        <p>Through my academic background and practical experience, I developed an appreciation for how successful brands create meaningful relationships with customers.</p>
-        <p>This curiosity is one reason why Bridgestone’s European Graduate Program in Marketing strongly appeals to me.</p>
+        <div class="emoji">💻</div>
+        <h4>Digital & AI Fluency</h4>
+        <p>I have gained practical experience with digital marketing tools, including Mailchimp, Salesforce Marketing Cloud and Canva.</p>
+        <p>At Tokyo Headspa in Sydney, I supported social media and EDM campaign management, including execution, optimisation and performance analysis.</p>
+        <p>I am also interested in how AI and automation can support more effective marketing processes.</p>
       </div>
 
       <div class="profile-box">
         <div class="emoji">🌍</div>
-        <h4>International Experience</h4>
-        <p>Moving from Germany to Australia taught me to adapt quickly and perform in unfamiliar environments.</p>
-        <p>Studying and working internationally strengthened my communication skills, curiosity and ability to collaborate across cultures.</p>
-        <p>It also reinforced my ambition to build an international career.</p>
+        <h4>International Collaboration</h4>
+        <p>Studying and working in Australia taught me to adapt quickly, communicate across cultures and perform in unfamiliar environments.</p>
+        <p>My international experience shaped the way I approach collaboration, problem-solving and business challenges.</p>
+        <p>This is why a European graduate program within Bridgestone strongly appeals to me.</p>
       </div>
     </div>
   </section>
 
   <section id="journey">
     <h3>My International Journey</h3>
+    <div class="red-line"></div>
 
     <div class="timeline">
       <div>
@@ -383,12 +545,12 @@
 
       <div>
         <strong>🇦🇺 Australia — BRITA Australia (Nov 2022 – Apr 2023)</strong><br />
-        Worked as a Customer Insights & Data & Marketing Assistant, conducting market analysis, customer research and strategic recommendations for commercial decision-making.
+        Worked as a Sales & Marketing Assistant, conducting market analysis, customer behaviour research, commercial feasibility analysis and strategic recommendations.
       </div>
 
       <div>
         <strong>🇩🇪 Germany — Bachelor Graduation (Jul 2024)</strong><br />
-        Completed my Bachelor's degree and decided to take the next step towards an international career.
+        Completed my Bachelor's degree and decided to take the next step towards a more international business and marketing career.
       </div>
 
       <div>
@@ -398,63 +560,76 @@
 
       <div>
         <strong>🇦🇺 Australia — Tokyo Headspa Sydney (Jan 2026 – May 2026)</strong><br />
-        Supported marketing initiatives, competitive benchmarking and business development projects in a fast-growing service business.
+        Supported marketing initiatives, competitive benchmarking, social media campaigns, EDM optimisation and brand development projects in a fast-growing service business.
       </div>
 
       <div>
         <strong>🇩🇪 Germany — Back Home, Looking Forward (Jun 2026)</strong><br />
-        Returning to Germany after several years of studying and working in Australia, bringing international experience and a global perspective.
+        Returning to Germany after several years of studying and working in Australia, bringing international experience, adaptability and a global perspective.
       </div>
 
       <div>
         <strong>🌍 Next Step: Bridgestone?</strong><br />
-        The European Graduate Program in Marketing combines exactly the areas that excite me most: brand strategy, customer insights, international collaboration and continuous development.
+        The European Graduate Program in Marketing combines exactly the areas that excite me most: brand management, customer insights, digital marketing, international collaboration and mobility.
       </div>
     </div>
   </section>
 
+  <section class="mobility-band">
+    <h3>Marketing in Mobility</h3>
+    <p>
+      What excites me about Bridgestone is that marketing is not only about promoting products. It is about understanding customers, building trust, communicating innovation and supporting a safer, more sustainable and more connected mobility experience.
+    </p>
+    <p>
+      This combination of brand, data, customer experience and long-term transformation makes Bridgestone a particularly exciting environment for me.
+    </p>
+  </section>
+
   <section id="bridgestone">
     <h3>Why Bridgestone?</h3>
+    <div class="red-line"></div>
+
     <div class="intro">
       <p>
-        For me, Bridgestone represents more than a global mobility company. It represents the ability to connect strong brands, customer needs, innovation and sustainable business growth.
+        For me, Bridgestone represents more than a global tyre company. It represents mobility, innovation, customer trust and the ambition to create solutions for the journey ahead.
       </p>
 
       <p>
-        Few companies combine international reach, brand strength and a strong focus on mobility and innovation as successfully as Bridgestone.
+        What makes Bridgestone especially interesting to me is the opportunity to work in a marketing environment where brand strategy, customer insights and business performance come together.
       </p>
 
       <p>
-        What excites me most is the opportunity to work at the intersection of customer understanding, marketing and business strategy.
+        I am particularly motivated by the international nature of the graduate program. The opportunity to collaborate with teams across Europe, gain exposure to different markets and understand how marketing strategies are developed at a European level strongly aligns with my own international background.
       </p>
 
       <p>
-        The European Graduate Program in Marketing offers exposure to Brand Management, Customer Insights, Digital Marketing, Market Analysis and international collaboration — exactly the combination that aligns with my background, interests and long-term career ambitions.
+        After studying and working in Australia, I am looking for a role that allows me to bring my global mindset back to Germany while continuing to learn in an international business environment.
       </p>
 
       <p>
-        After studying and working in Australia, I am looking for a role that allows me to bring an international mindset back to Germany. Bridgestone’s global footprint, focus on innovation and commitment to long-term development make the company an ideal environment for my next step.
+        Bridgestone’s focus on innovation, sustainability, mobility solutions and long-term development makes the company a highly attractive place for me to start my professional career.
       </p>
     </div>
   </section>
 
   <section id="program">
     <h3>Why This Program Stands Out To Me</h3>
+    <div class="red-line"></div>
 
     <div class="cards">
       <div class="card">
-        <div class="emoji">📈</div>
-        <h4>Brand Management</h4>
+        <div class="emoji">🚀</div>
+        <h4>Real Marketing Responsibility</h4>
         <p>
-          I want to understand how strong consumer brands are built, positioned and developed over time. The Brand Management rotation offers the opportunity to connect consumer insights, communication and activation concepts in a practical business context.
+          I want to deepen my understanding of how marketing strategies are developed, how brands create value and how customer insights are translated into meaningful campaigns and experiences.
         </p>
       </div>
 
       <div class="card">
-        <div class="emoji">🤝</div>
-        <h4>Customer Insights & Data</h4>
+        <div class="emoji">📊</div>
+        <h4>Customer Insights & Business Intelligence</h4>
         <p>
-          For me, marketing is not only about creative ideas, but also about understanding customers and making data-driven decisions. The program’s focus on market analysis, insights and business intelligence is therefore especially attractive to me.
+          The program’s focus on market analysis, customer insights, business intelligence and performance tracking matches my analytical interests and previous experience in market and customer research.
         </p>
       </div>
 
@@ -462,60 +637,69 @@
         <div class="emoji">🌍</div>
         <h4>European Exposure</h4>
         <p>
-          The European exposure is one of the strongest reasons why this program stands out to me. It connects perfectly with my own international background and offers the chance to understand how marketing strategies are adapted across markets.
+          The opportunity to be part of a European graduate cohort, attend program events and collaborate across countries strongly appeals to me and fits my international career ambitions.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🤝</div>
+        <h4>Mentoring & Development</h4>
+        <p>
+          I value structured development, continuous feedback and learning from experienced managers and mentors. This is exactly the kind of environment in which I want to grow.
         </p>
       </div>
     </div>
 
-    <div class="intro" style="margin-top: 35px;">
+    <div class="intro" style="margin-top: 38px;">
       <p>
-        What makes this program especially attractive to me is that it does not focus on one single function. It combines Marketing, Brand Management, Customer Insights, Digital Marketing and international collaboration and therefore provides a broad commercial foundation. This is exactly the kind of cross-functional development I am looking for as I start my career.
+        What makes this program especially attractive to me is the combination of practical responsibility, international exposure and structured development. It offers the ideal environment to grow from a motivated graduate into a confident marketing professional.
       </p>
     </div>
   </section>
 
-  <section id="trends">
-    <h3>Three Trends Shaping the Future of Marketing & Mobility</h3>
+  <section id="ideas">
+    <h3>Three Topics I Find Exciting in Marketing & Mobility</h3>
+    <div class="red-line"></div>
 
     <div class="cards">
       <div class="card">
-        <div class="emoji">🛍️</div>
-        <h4>Digital Marketing</h4>
+        <div class="emoji">💡</div>
+        <h4>Customer-Centric Branding</h4>
         <p>
-          Digital tools and performance tracking are changing how brands understand customer behaviour and improve marketing effectiveness.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="emoji">♻️</div>
-        <h4>Sustainability</h4>
-        <p>
-          Consumers increasingly expect brands to combine product quality with responsible innovation and long-term environmental impact.
+          Strong brands are built by understanding customer needs, emotions and expectations — and translating them into consistent experiences across all touchpoints.
         </p>
       </div>
 
       <div class="card">
         <div class="emoji">📲</div>
-        <h4>Mobility Transformation</h4>
+        <h4>Digital Marketing & Performance</h4>
         <p>
-          The mobility sector is evolving quickly, creating new opportunities for brands to connect innovation, safety, sustainability and customer experience.
+          Digital tools, content and performance tracking allow marketing teams to better understand customers and continuously improve campaigns.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">♻️</div>
+        <h4>Sustainable Mobility & Brand Trust</h4>
+        <p>
+          Sustainability is becoming increasingly important for brand trust, customer expectations and long-term business value, especially in mobility-related industries.
         </p>
       </div>
     </div>
   </section>
 
-  <div class="highlight">
+  <section class="highlight">
     <h3>My Motivation</h3>
     <p>
-      I moved across continents to challenge myself, stepped outside my comfort zone to pursue international opportunities and developed a strong passion for marketing, customer insights and brand-focused business.
+      I moved across continents to challenge myself, studied and worked in international environments and developed a strong passion for marketing, customer insights and brand-driven business growth.
     </p>
     <p>
-      Now I am looking for an environment where I can continue learning, take responsibility and contribute to the growth of a global brand.
+      Now I am looking for an environment where I can continue learning, take responsibility and contribute to meaningful marketing projects in an international company.
     </p>
     <p>
-      For me, Bridgestone is exactly that environment.
+      For me, Bridgestone’s European Graduate Program in Marketing is exactly that opportunity.
     </p>
-  </div>
+  </section>
 
   <footer id="contact">
     <p><strong>Jan Kraege</strong></p>
